@@ -4,8 +4,36 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
+      unique: true,
+      // unique: [true, "username must be unique"],
+      required: [true, "Username is required"]
     },
-    password: String,
+    email: {
+      type: String,
+      unique: true,
+      // unique: [true, "Email must be unique"],
+      required: [true, "Email is required"]
+    },
+    password: {
+      type: String,
+    },
+    description: {
+      type: String,
+      default: 'No description provided.'
+    },
+    role: {
+      type: String,
+      enum: ['USER', 'PREMIUM', 'ADMIN'],
+      default: 'USER'
+    },
+    points: {
+      type: Number,
+      default: 0
+    },
+    courses: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Course',
+    }],
   },
   {
     timestamps: true,
