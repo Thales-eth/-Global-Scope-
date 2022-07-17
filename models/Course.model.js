@@ -33,9 +33,6 @@ const courseSchema = new Schema(
         resources: {
             type: String
         },
-        projects: {
-            type: String
-        },
         certificated: {
             type: Boolean
         }
