@@ -37,7 +37,7 @@ router.post("/deleteUser/:user_id", (req, res) => {
     const { user_id } = req.params
 
     User
-        .findByIdAndDelete()
+        .findByIdAndDelete(user_id)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
