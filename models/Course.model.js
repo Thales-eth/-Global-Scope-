@@ -5,7 +5,6 @@ const courseSchema = new Schema(
         coursename: {
             type: String,
             unique: true,
-            // unique: [true, "username must be unique"],
             required: [true, "Coursename is required"]
         },
         description: {
