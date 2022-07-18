@@ -5,13 +5,11 @@ const userSchema = new Schema(
     username: {
       type: String,
       unique: true,
-      // unique: [true, "username must be unique"],
       required: [true, "Username is required"]
     },
     email: {
       type: String,
       unique: true,
-      // unique: [true, "Email must be unique"],
       required: [true, "Email is required"]
     },
     password: {

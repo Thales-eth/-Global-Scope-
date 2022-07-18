@@ -21,6 +21,14 @@ router.get("/getOneUser/:user_id", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+router.post("/createUser", (req, res) => {
+
+    User
+        .create(req.body)
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json(err))
+})
+
 router.get("/editUser/:user_id", (req, res) => {
 
     const { user_id } = req.params
@@ -37,7 +45,7 @@ router.post("/deleteUser/:user_id", (req, res) => {
     const { user_id } = req.params
 
     User
-        .findByIdAndDelete()
+        .findByIdAndDelete(user_id)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
