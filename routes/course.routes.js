@@ -7,7 +7,7 @@ router.get("/getAllCourses", (req, res) => {
     Course
         .find()
         .then(response => res.json(response))
-        .catch(err => res.status(500).json(err))
+        .catch(err => res.status(500).json('err'))
 })
 
 
@@ -26,7 +26,7 @@ router.put("/editCourse/:course_id", (req, res) => {
     const { course_id } = req.params
 
     Course
-        .findById(course_id, req.body)
+        .findByIdAndUpdate(course_id, req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
