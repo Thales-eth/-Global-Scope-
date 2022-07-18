@@ -29,17 +29,17 @@ router.post("/createUser", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.get("/editUser/:user_id", (req, res) => {
+router.put("/editUser/:user_id", (req, res) => {
 
     const { user_id } = req.params
 
     User
-        .findById(user_id)
+        .findByIdAndUpdate(user_id, req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
 
-router.post("/deleteUser/:user_id", (req, res) => {
+router.delete("/deleteUser/:user_id", (req, res) => {
 
 
     const { user_id } = req.params

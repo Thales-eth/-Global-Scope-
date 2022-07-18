@@ -21,12 +21,12 @@ router.get("/getOneCourse/:course_id", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.get("/editCourse/:course_id", (req, res) => {
+router.put("/editCourse/:course_id", (req, res) => {
 
     const { course_id } = req.params
 
     Course
-        .findById(course_id)
+        .findById(course_id, req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
@@ -40,13 +40,13 @@ router.post("/saveCourse", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.post("/deleteCourse/:course_id", (req, res) => {
+router.delete("/deleteCourse/:course_id", (req, res) => {
 
 
     const { course_id } = req.params
 
     Course
-        .findByIdAndDelete()
+        .findByIdAndDelete(course_id)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
