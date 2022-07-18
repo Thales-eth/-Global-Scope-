@@ -7,7 +7,7 @@ router.get("/getAllCourses", (req, res) => {
     Course
         .find()
         .then(response => res.json(response))
-        .catch(err => res.status(500).json(err))
+        .catch(err => res.status(500).json('err'))
 })
 
 
