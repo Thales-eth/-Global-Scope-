@@ -34,6 +34,10 @@ const courseSchema = new Schema(
         },
         certificated: {
             type: Boolean
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
 
     },
