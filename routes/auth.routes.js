@@ -88,14 +88,14 @@ router.post('/login', (req, res, next) => {
 });
 
 
-// router.get('/verify', isAuthenticated, (req, res) => {
+router.get('/verify', isAuthenticated, (req, res) => {
 
-//     console.log('ESTAMOS EN LA RUTA Y EL TOKEN ERA CORRECTO. EL PAYLOAD ES', req.payload)
+    console.log('ESTAMOS EN LA RUTA Y EL TOKEN ERA CORRECTO. EL PAYLOAD ES', req.payload)
 
-//     setTimeout(() => {
-//         res.status(200).json(req.payload)
-//     }, 1500)
-// })
+    setTimeout(() => {
+        res.status(200).json(req.payload)
+    }, 1500)
+})
 
 
 module.exports = router
