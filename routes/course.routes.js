@@ -34,10 +34,10 @@ router.put("/editCourse/:course_id", (req, res) => {
 
 router.post("/saveCourse", (req, res) => {
 
-    const { _id: owner } = req.payload
+    // const { _id: owner } = req.payload
 
     Course
-        .create({ owner, ...req.body })
+        .create(req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })

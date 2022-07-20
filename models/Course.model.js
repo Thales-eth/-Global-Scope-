@@ -18,7 +18,7 @@ const courseSchema = new Schema(
             type: String
         },
         theory: {
-            type: String
+            type: {}
         },
         test: {
             type: String
