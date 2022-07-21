@@ -35,7 +35,6 @@ const courseSchema = new Schema(
         certificated: {
             type: Boolean
         }
-
     },
     {
         timestamps: true,
