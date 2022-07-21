@@ -34,6 +34,8 @@ router.put("/editCourse/:course_id", (req, res) => {
 
 router.post("/saveCourse", (req, res) => {
 
+    // const { _id: owner } = req.payload
+    console.log('ESTO ES EL BODY', req.body)
     Course
         .create(req.body)
         .then(response => res.json(response))

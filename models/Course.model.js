@@ -18,7 +18,7 @@ const courseSchema = new Schema(
             type: String
         },
         theory: {
-            type: String
+            type: {}
         },
         test: {
             type: String
@@ -34,6 +34,10 @@ const courseSchema = new Schema(
         },
         certificated: {
             type: Boolean
+        },
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
     },
     {
