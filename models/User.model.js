@@ -19,6 +19,10 @@ const userSchema = new Schema(
       type: String,
       default: 'No description provided.'
     },
+    avatar: {
+      type: String,
+      default: 'https://w7.pngwing.com/pngs/552/807/png-transparent-pepe-frog-illustration-gif-imgur-tenor-know-your-meme-twitch-emotes-vertebrate-meme-fictional-character.png'
+    },
     role: {
       type: String,
       enum: ['USER', 'PREMIUM', 'ADMIN'],
