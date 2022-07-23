@@ -6,6 +6,7 @@ router.get("/getAllCourses", (req, res) => {
 
     Course
         .find()
+        // .select()
         .then(response => res.json(response))
         .catch(err => res.status(500).json('err'))
 })
@@ -34,8 +35,6 @@ router.put("/editCourse/:course_id", (req, res) => {
 
 router.post("/saveCourse", (req, res) => {
 
-    // const { _id: owner } = req.payload
-    console.log('ESTO ES EL BODY', req.body)
     Course
         .create(req.body)
         .then(response => res.json(response))
@@ -43,7 +42,6 @@ router.post("/saveCourse", (req, res) => {
 })
 
 router.delete("/deleteCourse/:course_id", (req, res) => {
-
 
     const { course_id } = req.params
 

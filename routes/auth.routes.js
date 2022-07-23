@@ -4,7 +4,7 @@ const User = require("../models/User.model")
 
 const jwt = require("jsonwebtoken")
 
-const { isAuthenticated } = require("./middleware/jwt.middleware")
+const { isAuthenticated } = require("../middleware/jwt.middleware")
 
 
 const router = express.Router()
@@ -35,14 +35,12 @@ router.post('/createUser', (req, res, next) => {
         })
         .then((createdUser) => {
 
-            console.log('----', createdUser)
             const { email, username, _id } = createdUser
             const user = { email, username, _id }
 
             res.status(201).json({ user })
         })
         .catch(err => {
-            console.log(err)
             res.status(500).json({ message: "Internal Server Error" })
         })
 })
@@ -89,8 +87,6 @@ router.post('/login', (req, res, next) => {
 
 
 router.get('/verify', isAuthenticated, (req, res) => {
-
-    console.log('ESTAMOS EN LA RUTA Y EL TOKEN ERA CORRECTO. EL PAYLOAD ES', req.payload)
 
     setTimeout(() => {
         res.status(200).json(req.payload)
