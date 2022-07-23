@@ -1,6 +1,5 @@
 const router = require("express").Router()
 // import { isAuthenticated } from "../middleware/jwt.middleware"
-
 const User = require('./../models/User.model')
 
 router.get("/getAllUsers", (req, res) => {
@@ -35,7 +34,7 @@ router.put("/editUser/:user_id", (req, res) => {
 
 // router.put("/enroll/:course_id", (req, res) => {
 
-//     console.log('QUIEN COJONES ERES', req.payload,)
+//     console.log('QUIEN ERES', req.payload,)
 
 //     const { course_id } = req.params
 
