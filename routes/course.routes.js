@@ -1,5 +1,5 @@
 const router = require("express").Router()
-
+const { isAuthenticated } = require("./../middleware/jwt.middleware")
 const Course = require('./../models/Course.model')
 
 router.get("/getAllCourses", (req, res) => {
@@ -15,14 +15,17 @@ router.get("/getAllCourses", (req, res) => {
 router.get("/getOneCourse/:course_id", (req, res) => {
 
     const { course_id } = req.params
-
+    console.log('ID', course_id)
     Course
         .findById(course_id)
-        .then(response => res.json(response))
+        .then(response => {
+            console.log('response', response)
+            res.json(response)
+        })
         .catch(err => res.status(500).json(err))
 })
 
-router.put("/editCourse/:course_id", (req, res) => {
+router.put("/editCourse/:course_id", isAuthenticated, (req, res) => {
 
     const { course_id } = req.params
 
@@ -33,7 +36,7 @@ router.put("/editCourse/:course_id", (req, res) => {
 })
 
 
-router.post("/saveCourse", (req, res) => {
+router.post("/saveCourse", isAuthenticated, (req, res) => {
 
     Course
         .create(req.body)
