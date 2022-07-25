@@ -11,6 +11,18 @@ router.get("/getAllCourses", (req, res) => {
         .catch(err => res.status(500).json('err'))
 })
 
+router.get("/getRandomCourse", (req, res) => {
+
+
+    Course
+        .find()
+        .then(response => {
+            let random = Math.floor(Math.random() * response.length)
+            res.json(response[random])
+        })
+        .catch(err => res.status(500).json('err'))
+})
+
 
 router.get("/getOneCourse/:course_id", (req, res) => {
 

@@ -5,5 +5,6 @@ router.use("/user", require('./user.routes'))
 router.use("/auth", require('./auth.routes'))
 router.use("/upload", require('./upload.routes'))
 router.use("/", require('./code.routes'))
+router.use("/kata", require('./kata.routes'))
 
 module.exports = router;

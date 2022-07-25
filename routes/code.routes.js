@@ -1,29 +1,35 @@
 const router = require("express").Router()
 const exec = require('child_process').exec;
-const { text } = require("express");
 const fs = require('fs')
 
 router.post('/js', (req, res) => {
 
-    // 1st try
-    fs.writeFileSync('sum.js', req.body.code)
+    const { code, kata_id } = req.body
 
-    // const funCode = exec('npm test',
-    //     (error, stdout, stderr) => {
-    //         console.log(`stdout: ${stdout}`);
-    //         console.log(`stderr: ${stderr}`);
-    //         if (error !== null) {
-    //             console.log(`exec error: ${error}`);
-    //         }
-    //         res.json({ results: stderr })
-    //     });
+    fs.writeFile('katas/001/kata.js', code, (err) => {
+        if (err) {
+            console.log(err)
+        }
 
-    // console.log(typeof exec)
+        res.json({ kata_id })
+    })
+})
 
-    // fs.writeFile('sum.js', req.body.code, funCode)
+router.post('/check', (req, res, next) => {
+
+    exec('npm test',
+        {
+            cwd: 'katas/001'
+        },
+        (error, stdout, stderr) => {
+            console.log(`stdout: ${stdout}`);
+            console.log(`stderr: ${stderr}`);
+            res.json({ results: stderr })
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        })
 
 })
 
 module.exports = router
-
-

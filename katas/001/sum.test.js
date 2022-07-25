@@ -1,4 +1,4 @@
-const sum = require('./sum')
+const sum = require('./kata')
 
 test("works", () => {
     expect(sum(1, 5)).toBe(6);
