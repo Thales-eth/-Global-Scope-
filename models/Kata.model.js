@@ -8,6 +8,9 @@ const kataSchema = new Schema(
         content: {
             type: String,
         },
+        kataCode: {
+            type: String,
+        }
     },
     {
         timestamps: true,

@@ -4,22 +4,26 @@ const fs = require('fs')
 
 router.post('/js', (req, res) => {
 
-    const { code, kata_id } = req.body
+    const { code, kataCode } = req.body
 
-    fs.writeFile('katas/001/kata.js', code, (err) => {
+    console.log('HOLA SOY EL KATA CODE:', kataCode)
+
+    fs.writeFile(`katas/${kataCode}/kata.js`, code, (err) => {
         if (err) {
             console.log(err)
         }
 
-        res.json({ kata_id })
+        res.json({ kataCode })
     })
 })
 
 router.post('/check', (req, res, next) => {
 
+    const { kataCode } = req.body
+
     exec('npm test',
         {
-            cwd: 'katas/001'
+            cwd: `katas/${kataCode}`
         },
         (error, stdout, stderr) => {
             console.log(`stdout: ${stdout}`);
