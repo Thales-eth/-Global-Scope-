@@ -12,6 +12,14 @@ router.get("/getOneKata/:kata_id", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+router.get("/getAllKatas", (req, res) => {
+
+    Kata
+        .find()
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json(err))
+})
+
 router.post("/saveKata", (req, res) => {
 
     Kata
