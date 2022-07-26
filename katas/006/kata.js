@@ -1,6 +1,7 @@
 function isSquare(int) { 
  //write your code here
-return Math.sqrt(int) % 1 === 0 ? true : false
+  let num = Math.sqrt(int)
+  return num % 1 === 0
  }
  // Do not touch anything below this line :3
  module.exports = isSquare
