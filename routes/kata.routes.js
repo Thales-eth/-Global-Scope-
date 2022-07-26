@@ -1,5 +1,4 @@
 const router = require("express").Router()
-
 const Kata = require('./../models/Kata.model')
 
 router.get("/getOneKata/:kata_id", (req, res) => {
@@ -27,6 +26,17 @@ router.post("/saveKata", (req, res) => {
         .create(req.body)
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
+})
+
+router.get("/randomKata", (req, res) => {
+
+    Kata
+        .find()
+        .then(response => {
+            let random = Math.floor(Math.random() * response.length)
+            res.json(response[random])
+        })
+        .catch(err => res.status(500).json('err'))
 })
 
 
