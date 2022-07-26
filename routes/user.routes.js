@@ -25,12 +25,17 @@ router.get("/getOneUser/:user_id", (req, res) => {
 
 router.put("/editUser/:user_id", (req, res) => {
 
+
     const { user_id } = req.params
 
     User
         .findByIdAndUpdate(user_id, req.body)
-        .then(response => res.json(response))
+        .then(response => {
+            res.json(response)
+        })
         .catch(err => res.status(500).json(err))
+
+
 })
 
 // router.put("/enroll/:course_id", (req, res) => {
