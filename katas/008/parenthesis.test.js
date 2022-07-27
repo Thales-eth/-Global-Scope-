@@ -1,16 +1,16 @@
 const validParentheses = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(validParentheses('(')).toEqual(false);
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(validParentheses('()')).toEqual(true);
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(validParentheses('(())')).toEqual(true);
 });
 
-test("works Great!", () => {
+test("test 4", () => {
     expect(validParentheses('(((())))')).toEqual(true);
 });

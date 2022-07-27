@@ -1,16 +1,16 @@
 const getEven = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(getEven(2)).toBe('Even');
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(getEven(222)).toBe('Even');
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(getEven(333)).toBe('Odd');
 });
 
-test("works just fine", () => {
+test("test 4", () => {
     expect(getEven(0)).toBe('Even');
 });

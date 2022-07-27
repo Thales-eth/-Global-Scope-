@@ -1,12 +1,12 @@
 const mult = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(mult(1, 5)).toBe(5);
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(mult(2, 5)).toBe(10);
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(mult(33, 3)).toBe(99);
 });

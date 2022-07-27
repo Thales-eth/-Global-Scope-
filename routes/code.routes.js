@@ -28,7 +28,7 @@ router.post('/check', (req, res, next) => {
         (error, stdout, stderr) => {
             console.log(`stdout: ${stdout}`);
             console.log(`stderr: ${stderr}`);
-            res.json({ results: stderr })
+            res.json({ results: stderr, output: stdout })
             if (error !== null) {
                 console.log(`exec error: ${error}`);
             }

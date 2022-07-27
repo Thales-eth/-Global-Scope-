@@ -16,7 +16,10 @@ router.get("/getAllKatas", (req, res) => {
     Kata
         .find()
         .sort({ 'difficulty': 1 })
-        .then(response => res.json(response))
+        .then(response => {
+            console.log('LAS KATITAS -->', response)
+            res.json(response)
+        })
         .catch(err => res.status(500).json(err))
 })
 

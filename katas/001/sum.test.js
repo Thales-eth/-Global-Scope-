@@ -1,12 +1,12 @@
 const sum = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(sum(1, 5)).toBe(6);
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(sum(2, 5)).toBe(7);
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(sum(3, 5)).not.toBe(7);
 });

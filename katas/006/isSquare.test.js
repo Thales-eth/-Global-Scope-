@@ -1,18 +1,18 @@
 const isSquare = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(isSquare(625)).toBe(true);
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(isSquare(121)).toBe(true);
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(isSquare(25)).toBe(true);
 });
 
 
-test("works just fine", () => {
+test("test 4", () => {
     expect(isSquare(26)).toBe(false);
 });
 

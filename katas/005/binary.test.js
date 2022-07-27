@@ -1,13 +1,13 @@
 const countBits = require('./kata')
 
-test("works", () => {
+test("test 1", () => {
     expect(countBits(0)).toBe(0);
 });
-test("works perfectly", () => {
+test("test 2", () => {
     expect(countBits(4)).toBe(1);
 });
 
-test("works just fine", () => {
+test("test 3", () => {
     expect(countBits(7)).toBe(3);
 });
 
