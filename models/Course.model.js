@@ -18,7 +18,8 @@ const courseSchema = new Schema(
             type: String
         },
         theory: {
-            type: {}
+            type: {},
+            required: [true, "Coursename is required"]
         },
         test: {
             type: String
