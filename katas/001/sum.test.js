@@ -1,3 +1,5 @@
+import jest from './../../node_modules/jest'
+
 const sum = require('./kata')
 
 test("test 1", () => {

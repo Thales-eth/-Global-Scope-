@@ -21,6 +21,8 @@ router.post('/check', (req, res, next) => {
 
     const { kataCode } = req.body
 
+    console.log('ESTO LLEGA, NO?', kataCode)
+
     exec('npm test',
         {
             cwd: `katas/${kataCode}`
