@@ -23,7 +23,7 @@ router.post('/check', (req, res, next) => {
 
     console.log('ESTO LLEGA, NO?', kataCode)
 
-    exec('npm i; npm test',
+    exec('npm test',
         {
             cwd: `katas/${kataCode}`
         },
