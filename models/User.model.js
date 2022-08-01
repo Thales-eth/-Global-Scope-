@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
+
   {
     username: {
       type: String,
@@ -21,7 +22,7 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
-      default: 'https://w7.pngwing.com/pngs/552/807/png-transparent-pepe-frog-illustration-gif-imgur-tenor-know-your-meme-twitch-emotes-vertebrate-meme-fictional-character.png'
+      default: 'https://res.cloudinary.com/dqwiiycdv/image/upload/v1658999802/pepe_ipznv8.png'
     },
     role: {
       type: String,

@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const kataSchema = new Schema(
+
     {
         title: {
             type: String,
