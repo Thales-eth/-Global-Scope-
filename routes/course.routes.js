@@ -27,11 +27,9 @@ router.get("/getRandomCourse", (req, res) => {
 router.get("/getOneCourse/:course_id", (req, res) => {
 
     const { course_id } = req.params
-    console.log('ID', course_id)
     Course
         .findById(course_id)
         .then(response => {
-            console.log('response', response)
             res.json(response)
         })
         .catch(err => res.status(500).json(err))

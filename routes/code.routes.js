@@ -6,8 +6,6 @@ router.post('/js', (req, res) => {
 
     const { code, kataCode } = req.body
 
-    console.log('HOLA SOY EL KATA CODE:', kataCode)
-
     fs.writeFile(`katas/${kataCode}/kata.js`, code, (err) => {
         if (err) {
             console.log(err)
@@ -20,8 +18,6 @@ router.post('/js', (req, res) => {
 router.post('/check', (req, res, next) => {
 
     const { kataCode } = req.body
-
-    console.log('ESTO LLEGA, NO?', kataCode)
 
     exec('npm test',
         {
