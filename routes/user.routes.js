@@ -38,20 +38,6 @@ router.put("/editUser/:user_id", (req, res) => {
 
 })
 
-// router.put("/enroll/:course_id", (req, res) => {
-
-//     console.log('QUIEN ERES', req.payload,)
-
-//     const { course_id } = req.params
-
-//     const { _id: user_id } = req.payload
-
-//     User
-//         .findByIdAndUpdate(user_id, { $addToSet: { courses: course_id } })
-//         .then(response => res.json(response))
-//         .catch(err => res.status(500).json(err))
-// })
-
 router.delete("/deleteUser/:user_id", (req, res) => {
 
 
